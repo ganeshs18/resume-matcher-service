@@ -2,9 +2,9 @@ pipeline {
   agent any
 
   environment {
-    APP_DIR = "/home/ganeshsundar46"
+    APP_DIR = "/home/ganeshs18"
     JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
-    BACKUP_DIR = "/home/ganeshsundar46/jar-backups"
+    BACKUP_DIR = "/home/ganeshs18/jar-backups"
   }
 
   triggers {
