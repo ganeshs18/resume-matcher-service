@@ -27,7 +27,7 @@ pipeline {
     stage('Backup Old JAR') {
       steps {
         sh '''
-        mkdir -p $BACKUP_DIR
+
         if [ -f "$APP_DIR/$JAR_NAME" ]; then
           timestamp=$(date +%Y%m%d_%H%M%S)
           cp $APP_DIR/$JAR_NAME $BACKUP_DIR/${JAR_NAME}_${timestamp}
