@@ -5,6 +5,7 @@ environment {
   APP_DIR = "/opt/resume-matcher"
   JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
   BACKUP_DIR = "/opt/resume-matcher/backups"
+  PM2_HOME = "/var/lib/jenkins/.pm2"
 }
 
   triggers {
@@ -47,6 +48,7 @@ environment {
    stage('Restart PM2') {
      steps {
        sh '''
+       export PM2_HOME=$PM2_HOME
        pm2 delete resume-matcher-ai || true
        pm2 start /opt/resume-matcher/run.sh --name resume-matcher-ai
        pm2 save
