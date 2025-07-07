@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/ganeshs18/resume-matcher-service.git'
+        git branch: 'main', url: 'git@github.com:ganeshs18/resume-matcher-service.git',credentialsId: 'vm-ssh-key'
       }
     }
 
