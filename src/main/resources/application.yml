@@ -1,0 +1,57 @@
+server:
+  port: ${SERVER_PORT:8888}
+  servlet:
+    context-path: ${SERVER_CONTEXT_PATH:/resume-matcher}
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  application:
+    name: ${SPRING_APPLICATION_NAME:resume-matcher-service}
+
+  security:
+    jwt:
+      secret: ${SPRING_SECURITY_JWT_SECRET}
+      expiration: ${SPRING_SECURITY_JWT_EXPIRATION:3600}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+      show-sql: ${SPRING_JPA_SHOW_SQL:true}
+    properties:
+      hibernate:
+        dialect: ${SPRING_JPA_HIBERNATE_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER:org.postgresql.Driver}
+
+  ai:
+    model:
+      chat: ${SPRING_AI_MODEL_CHAT:vertexai}
+    vertex:
+      ai:
+        enable: ${SPRING_AI_VERTEX_AI_ENABLE:true}
+        apiEndpoint: ${SPRING_AI_VERTEX_AI_ENDPOINT:us-central1-aiplatform.googleapis.com}
+        gemini:
+          project-id: ${SPRING_AI_VERTEX_AI_PROJECT_ID}
+          location: ${SPRING_AI_VERTEX_AI_LOCATION:us-central1}
+          credentials-uri: ${SPRING_AI_VERTEX_AI_CREDENTIALS_URI}
+          transport: ${SPRING_AI_VERTEX_AI_TRANSPORT:REST}
+
+aws:
+  region: ${AWS_REGION:ap-south-1}
+  s3:
+    bucket-name: ${AWS_S3_BUCKET_NAME}
+  access-key: ${AWS_ACCESS_KEY}
+  secret-key: ${AWS_SECRET_KEY}
+
+jwt:
+  secret: ${JWT_SECRET}
+
+google:
+  client:
+    id: ${GOOGLE_CLIENT_ID}
+    secret: ${GOOGLE_CLIENT_SECRET}
