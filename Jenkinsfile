@@ -1,11 +1,11 @@
 pipeline {
   agent any
 
-  environment {
-    APP_DIR = "/home/ganeshs18"
-    JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
-    BACKUP_DIR = "/home/ganeshs18/jar-backups"
-  }
+environment {
+  APP_DIR = "/opt/resume-matcher"
+  JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
+  BACKUP_DIR = "/opt/resume-matcher/backups"
+}
 
   triggers {
     pollSCM('* * * * *')  // or use webhook for real-time trigger
