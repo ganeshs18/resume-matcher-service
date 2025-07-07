@@ -48,11 +48,12 @@ environment {
      steps {
        sh '''
        pm2 delete resume-matcher-ai || true
-       pm2 start --name resume-matcher-ai --interpreter=none -- java -jar $APP_DIR/$JAR_NAME
+       pm2 start --name resume-matcher-ai --interpreter=none -- "java -jar $APP_DIR/$JAR_NAME"
        pm2 save
        '''
      }
    }
+
 
   }
 
