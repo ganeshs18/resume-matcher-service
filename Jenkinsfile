@@ -6,6 +6,23 @@ environment {
   JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
   BACKUP_DIR = "/opt/resume-matcher/backups"
   PM2_HOME = "/var/lib/jenkins/.pm2"
+
+  SPRING_DATASOURCE_URL                 = credentials('SPRING_DATASOURCE_URL')
+      SPRING_DATASOURCE_USERNAME            = credentials('SPRING_DATASOURCE_USERNAME')
+      SPRING_DATASOURCE_PASSWORD            = credentials('SPRING_DATASOURCE_PASSWORD')
+      SPRING_DATASOURCE_DRIVER              = credentials('SPRING_DATASOURCE_DRIVER')
+
+      SPRING_AI_VERTEX_AI_PROJECT_ID        = credentials('SPRING_AI_VERTEX_AI_PROJECT_ID')
+      SPRING_AI_VERTEX_AI_CREDENTIALS_URI   = credentials('SPRING_AI_VERTEX_AI_CREDENTIALS_URI')
+
+      AWS_S3_BUCKET_NAME                    = credentials('AWS_S3_BUCKET_NAME')
+      AWS_ACCESS_KEY                        = credentials('AWS_ACCESS_KEY')
+      AWS_SECRET_KEY                        = credentials('AWS_SECRET_KEY')
+
+      JWT_SECRET                            = credentials('JWT_SECRET')
+
+      GOOGLE_CLIENT_ID                      = credentials('GOOGLE_CLIENT_ID')
+      GOOGLE_CLIENT_SECRET                  = credentials('GOOGLE_CLIENT_SECRET')
 }
 
   triggers {
