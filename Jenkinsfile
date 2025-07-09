@@ -3,6 +3,7 @@ pipeline {
 
 environment {
   APP_DIR = "/opt/resume-matcher"
+  PM2_HOME = "/etc/pm2"
   JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
   BACKUP_DIR = "/opt/resume-matcher/backups"
   PM2_HOME = "/var/lib/jenkins/.pm2"
