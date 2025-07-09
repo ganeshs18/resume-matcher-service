@@ -6,6 +6,7 @@ environment {
   JAR_NAME = "resumeMatcherService-0.0.1-SNAPSHOT.jar"
   BACKUP_DIR = "/opt/resume-matcher/backups"
   PM2_HOME = "/var/lib/jenkins/.pm2"
+  KEYSTORE_PASSWORD = credentials('KEYSTORE_PASSWORD')
 
   SPRING_DATASOURCE_URL                 = credentials('SPRING_DATASOURCE_URL')
       SPRING_DATASOURCE_USERNAME            = credentials('SPRING_DATASOURCE_USERNAME')

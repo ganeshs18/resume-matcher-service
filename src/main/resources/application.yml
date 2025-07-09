@@ -1,5 +1,10 @@
 server:
   port: ${SERVER_PORT:8888}
+  ssl:
+    enabled: true
+    key-store: file:/opt/resume-matcher/keystore.p12
+    key-store-password: ${KEYSTORE_PASSWORD}
+    key-store-type: PKCS12
   servlet:
     context-path: ${SERVER_CONTEXT_PATH:/resume-matcher}
 
